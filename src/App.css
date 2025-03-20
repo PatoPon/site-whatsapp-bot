@@ -1,0 +1,246 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  min-height: 100vh;
+}
+
+/* Estrutura principal */
+.App {
+  display: flex;
+  gap: 70px;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #3c0672, #6a1b9a);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #007bff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.sidebar li:hover {
+  background: #0056b3;
+}
+
+.sidebar li .notification {
+  background: #20df20;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 10px;
+  font-size: 0.8em;
+}
+
+.nomeChat {
+  display: flex;
+  flex-direction: column;
+}
+
+.nomeChat span {
+  padding: 3px 5px;
+  background: #ff4d6d;
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Chat Container */
+.chat-container {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-container h1 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+}
+
+/* Input de mensagem */
+.chat-container input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.chat-container input:focus {
+  border-color: #007bff;
+}
+
+/* Botão de enviar */
+.chat-container button {
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.chat-container button:hover {
+  background: #0056b3;
+}
+
+/* Container das mensagens */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 65vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.botaoResponder {
+  width: 5% !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 14px !important;
+  padding: 5px !important;
+  border-radius: 50% !important;
+  background-color: #25d366 !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer !important;
+  margin-top: 4.4px !important;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.messages div {
+  padding: 12px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 0.95em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botoes {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.messages .admin {
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  align-self: flex-end;
+  align-items: flex-end;
+  text-align: left;
+  color: #333;
+}
+
+.messages .user {
+  display: flex;
+  flex-direction: column;
+  background: #007bff;
+  align-self: flex-end;
+  color: white;
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.messages .bot {
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+  text-align: right;
+  color: #004085;
+}
+
+.timestamp {
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0;
+  text-align: left;
+  text-align: right;
+  font-size: 0.75em;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .chat-container {
+    padding: 15px;
+  }
+}
